@@ -7,8 +7,6 @@ git config --global user.name "$GITHUB_USERNAME"
 git clone "https://$4@github.com/$5.git"  "$RUNNER_TEMP/infra-as-code-repo"
 cd "$RUNNER_TEMP/infra-as-code-repo"
 
-git --no-pager branch -a -v
-
 if [ -n "$6" ]; then
   git checkout -b "$6" "origin/$6"
 fi
@@ -23,4 +21,4 @@ fi
 
 git add .
 git commit -m "Updating of key $2 in $1"
-git push -u origin "$7"
+git push
