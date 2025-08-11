@@ -29,7 +29,7 @@ Add this to github acion:
 ```
 to update content of "myServiceImageTag" with git-ref value.
 
-To target a specifc branch in the infra as a code repositoy, just add the branch name as parameter, just like this:
+Alternatively, you can specify the base branch in the infra as code repository to be checked out:
 ```
       - name: update gitops
         uses: delvatt/gitops-release@v7
@@ -39,7 +39,21 @@ To target a specifc branch in the infra as a code repositoy, just add the branch
           value: '${{ github.ref }}
           github-token: ${{ secrets.GIT_ACCESS_TOKEN }}
           github-org-and-repo:  "myorg/infra-as-code-repo"
-          github-repo-branch:  "my-branch-name"
+          repo-base-branch:  "base-branch-name"
+```
+
+Also, to target a specifc branch where to apply the changes in the infra as a code repositoy, just add the target branch name as an extra parameter, just like this:
+```
+      - name: update gitops
+        uses: delvatt/gitops-release@v7
+        with:
+          file: "release.yaml"
+          key: "myServiceImageTag"
+          value: '${{ github.ref }}
+          github-token: ${{ secrets.GIT_ACCESS_TOKEN }}
+          github-org-and-repo:  "myorg/infra-as-code-repo"
+          repo-base-branch:  "base-branch-name"
+          repo-target-branch:  "target-branch-name"
 ```
 the branch will be checked out if it already exists or will be created if not.
 
@@ -53,7 +67,8 @@ Optionally, you can provide github username and email that will be used to commi
           value: '${{ github.ref }}
           github-token: ${{ secrets.GIT_ACCESS_TOKEN }}
           github-org-and-repo:  "myorg/infra-as-code-repo"
-          github-repo-branch:  "my-branch-name"
+          repo-base-branch:  "base-branch-name"
+          repo-target-branch:  "target-branch-name"
           github-username: gitops-user
           github-user-mail: bot@example.com
 ```
