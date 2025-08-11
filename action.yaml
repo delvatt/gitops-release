@@ -1,4 +1,4 @@
-name: 'Gitops release'
+name: 'Gitops Release'
 description: 'Updates a key in a repository and commit it'
 branding:
   icon: 'git-commit'
