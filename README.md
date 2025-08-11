@@ -1,5 +1,7 @@
 # gitops-release
 
+This is fork of [@denispalnitsky](https://github.com/DenisPalnitsky)'s [gitops-release](https://github.com/DenisPalnitsky/gitops-release). The main change is an optional branch parameter that can be specified, in order to target a specific branch (creating it if not already existing) in the infra as code repositoy.
+
 Github action to update yaml files inside another github repository
 
 
