@@ -1,8 +1,8 @@
 name: 'Gitops Releases'
-description: 'Updates a key in a repository and commit it'
+description: 'Updates a key in a repository and commits it'
 branding:
   icon: 'git-commit'
-  color: 'orange'
+  color: 'gray-dark'
 inputs:
   filename:
     description: 'Filename to update'

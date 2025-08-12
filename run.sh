@@ -21,4 +21,4 @@ fi
 
 git add .
 git commit -m "Updating of key $2 in $1"
-git push
+git push -u origin "$7"

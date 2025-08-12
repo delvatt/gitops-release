@@ -27,7 +27,7 @@ Add this to github acion:
           github-token: ${{ secrets.GIT_ACCESS_TOKEN }}
           github-org-and-repo:  "myorg/infra-as-code-repo"
 ```
-to update content of "myServiceImageTag" with git-ref value.
+to update content of "myServiceImageTag" with git-ref value in the repository's default branch.
 
 Alternatively, you can specify the base branch in the infra as code repository to be checked out:
 ```
@@ -41,6 +41,7 @@ Alternatively, you can specify the base branch in the infra as code repository t
           github-org-and-repo:  "myorg/infra-as-code-repo"
           repo-base-branch:  "base-branch-name"
 ```
+If the base branch does not exist in the remotes/origin, then the action will stop with an error.
 
 Also, to target a specifc branch where to apply the changes in the infra as a code repositoy, just add the target branch name as an extra parameter, just like this:
 ```
@@ -55,7 +56,7 @@ Also, to target a specifc branch where to apply the changes in the infra as a co
           repo-base-branch:  "base-branch-name"
           repo-target-branch:  "target-branch-name"
 ```
-the branch will be checked out if it already exists or will be created if not.
+the branch will be checked out if it already exists or created if not.
 
 Optionally, you can provide github username and email that will be used to commit the changes:
 ```
