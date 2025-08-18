@@ -1,6 +1,9 @@
 #!/bin/sh -l
 set -e
 
+git config --global user.email
+git config --global user.name
+
 git config --global user.email "$GITHUB_USER_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
 
@@ -21,4 +24,4 @@ fi
 
 git add .
 git commit -m "Updating of key $2 in $1"
-git push -u origin "$7"
+git push -u origin "$(git branch --show-current)"
