@@ -1,9 +1,6 @@
 #!/bin/sh -l
 set -e
 
-git config --global user.email
-git config --global user.name
-
 git config --global user.email "$GITHUB_USER_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
 
