@@ -7,9 +7,6 @@ git config --global user.name "$GITHUB_USERNAME"
 git clone "https://$4@github.com/$5.git"  "$RUNNER_TEMP/infra-as-code-repo"
 cd "$RUNNER_TEMP/infra-as-code-repo"
 
-git config --global user.email
-git config --global user.name
-
 if [ -n "$6" ]; then
   git checkout -b "$6" "origin/$6"
 fi
